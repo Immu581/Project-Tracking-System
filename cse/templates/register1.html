@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+ <style>
+    body{
+    background:linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+form{
+  margin-left:auto;
+  margin-right:auto;
+  border-style:solid;
+  width:40%;
+  background-color:#FFFAFA;
+  font-style:italic;
+  font-weight: bold;
+}
+label{
+  align-content:justify;
+  margin:0.5rem;
+}
+input{
+  margin:0.5rem;
+  width:45%;
+
+}
+.team{
+  margin:1rem;
+}
+.btn{
+  align-items: center;
+  margin: 1rem;
+  background-color:#344CB7;
+  border-radius:4px;
+  padding:10px 30px;
+  font-size: 20px;
+  color: white;}
+  .div{
+  border-style: solid;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 20%;
+
+}
+input[type=text]
+{
+  border:2px solid black;
+  border-radius: 4px;
+}
+.teamsize
+{
+  border:2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px;
+}
+ </style>
+    <title>Student Registration</title>
+  </head>
+  <body>
+
+    <form style='text-align:center;margin-left:auto;margin-right:auto;' enctype="multipart/form-data" class="regform" action="#" method="POST">
+        {% csrf_token %}
+      <div class="heading">
+        
+        <h1 style='text-align:center'>Team Registration form</h1>
+        {% for m in messages %}
+        <h1 style='text-align:center'>{{  m  }}</h1>
+        {% endfor %}
+        <hr style="width:50%;color:grey;background-color:grey">
+      </div>
+      <label style='margin-right:13vh;'>Project title</label>
+      <input type="text" name="ptitle"><br>
+      <label style='margin-right:5vh;'>Team username</label>
+      <input type="text" name="username" required><br>
+      <label style='margin-right:5vh;'>Team password</label>
+      <input type="password" name="password" required><br>
+      <label for='Team size' >Team size</label>
+      <select class="teamsize" name="size">
+        <option selected="selected" disabled>size</option>
+        <option value="1">1</option>
+          <option value="2">2</option>
+            <option value="3">3</option>
+              <option value="4">4</option>
+
+            </select><br>
+            
+      <button class='btn' type="submit" value="select">Next</button></br>
+    </form>
+
+  </body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+ body{
+   background-color:#71EFA3;
+ }
+    .projectform
+
+    {
+      border-width:5%;
+      margin-top:8%;
+      margin-left:20%;
+      margin-right:20%;
+      padding-top:2%;
+      padding-bottom:2%;
+      border-top:10%;
+      border-color:2px solid black;
+      background-color:white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius:45px;
+    }
+    label{
+      width:100px;
+      display:inline-block;
+      margin:0.5rem;
+      padding:1rem;
+
+
+      }
+      input{
+        display:inline-block;
+        border-radius:10px;
+        height:2rem;
+        width:25%;
+          border:1px solid grey;
+      }
+      .top_div
+      {
+         margin-left:6%;
+         font-size:18px;
+      }
+      .down_div
+      {
+font-size:18px;
+         margin:0.5rem;
+         padding-left:20%;
+      }
+     select{
+       height:2rem;
+       width:25%;
+         border-radius:10px;
+     }
+     button{
+       height:2rem;
+       width:25%;
+         border-radius:10px;
+         background-color:green;
+     }
+    </style>
+  </head>
+  <body>
+  <form class="projectform" action="" method="post">
+    {% csrf_token %}
+    <div class="top_div">
+     <h1 style="padding-left:30%;">{{title}}</h1>
+     <label for="">Roll number</label>
+     <label for="">Student name</label><br>
+     {% for i,j in myzip %}
+     <label for="">Member</label>
+     <input type="text" value="{{i}}" readonly>
+     <input type="text"  value="{{j}}" readonly>
+     {% endfor %}
+    </div>
+    <div class="down_div">
+        <label for='Mentor List' >Mentor List</label>
+        <select class="mentorlist" name="size">
+          <option selected="selected" disabled>Select Mentor</option>
+          {% for i,j in mentors %}
+         <option value={{ i }}>{{ j }}</option>
+          {% endfor %}
+          </select>
+          <button type="submit" name="button">Save</button>
+      </div>
+    </form>
+
+  </body>
+</html>

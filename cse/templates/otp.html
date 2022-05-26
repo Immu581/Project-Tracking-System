@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="Forget.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    body{
+    }
+    form
+    {
+      margin-left:27%;
+      margin-top:15%;
+      width:45%;
+      background-color: #DDDDDD;
+      height:15rem;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: rgba(105, 105, 115, 0.2) 0px 9px 33px 0px;
+    }
+    .forget label{
+      font-size: 20px;
+      margin: 1rem;
+      margin-left: 18%;
+    }
+    .forget input{
+      margin: 1rem;
+      width:50%;
+      height:2rem;
+      margin-left: 3%;
+    }
+    .forget button{
+      margin: 1rem;
+      width:20%;
+      height:2rem;
+      margin-left: 43%;
+      background-color: #0F00FF;
+      color:#fff;
+      border-radius: 10px;
+      height:3rem;
+      border:1px solid grey;
+    }
+    .forget a{
+      text-decoration: none;
+      color:#fff;
+      font-size: 20px;
+    }
+    .forget_div{
+      padding-top: 3rem;
+    }
+
+  </style>
+  <body>
+    <div class="forget">
+    <form action="forget_user" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="forget_div">
+      <label for="">OTP</label>
+      <input type="text" name="otp" placeholder="  Enter your OTP" required><br>
+       <button class="forget_btn" type="submit" name="button"> <a>Submit</a></button>
+       </div>
+       <input type="hidden" name="otp1" value={{ otp }}>
+       <input type="hidden" name="username1" value={{ username }}>
+    </form>
+    </div>
+  </body>
+</html>

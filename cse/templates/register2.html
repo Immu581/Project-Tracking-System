@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+ <style>
+    body{
+    background:linear-gradient(135deg,#71b7e6,#9b59b6);
+}
+form{
+  margin-left:auto;
+  margin-right:auto;
+  border-style:solid;
+  width:40%;
+  background-color:#FFFAFA;
+  font-style:italic;
+  font-weight: bold;
+}
+label{
+  align-content:justify;
+  margin:0.5rem;
+}
+input{
+  margin:0.5rem;
+  width:45%;
+
+}
+.team{
+  margin:1rem;
+}
+.btn{
+  align-items: center;
+  margin: 1rem;
+  background-color:#344CB7;
+  border-radius:4px;
+  padding:10px 30px;
+  font-size: 20px;
+  color: white;}
+  .div{
+  border-style: solid;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 20%;
+
+}
+input[type=text]
+{
+  border:2px solid black;
+  border-radius: 4px;
+}
+.teamsize
+{
+  border:2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px;
+}
+ </style>
+    <title>Student Registration</title>
+  </head>
+  <body>
+    <form style='text-align:center;margin-left:auto;margin-right:auto;' enctype="multipart/form-data" class="regform" action="complete_registration">
+        {% csrf_token %}
+      <div class="heading">
+        <h1 style='text-align:center'>{{ title }}</h1>
+        {% for m in messages %}
+        <h1 style='text-align:center'>{{  m  }}</h1>
+        {% endfor %}
+        <input type="hidden" name="ptitle" value= {{ title }}>
+        <input type="hidden" name="username" value= {{ username }}>
+        <input type="hidden" name="password" value= {{ password }}>
+        <input type="hidden" name="size" value= {{ count }}>
+        <hr style="width:50%;color:grey;background-color:grey">
+      </div>
+    {% for i in size %}
+        <div class="team">
+      <label style='margin-right:8vh;'>Team member name</label>
+      <input type="text" name="name" required><br>
+      <label style='margin-right:2vh;'>Team member roll number</label>
+      <input type="text" name="rollno" required><br>
+      <label style='margin-right:6vh;'>Email Id</label>
+      <input type="email" name="emailid" required><br>
+
+      </div>
+      {% endfor %}
+
+    <a href="#"><button class='btn' type="submit" name="button">Register</button></a>
+    </form>
+
+  </body>
+</html>
+
