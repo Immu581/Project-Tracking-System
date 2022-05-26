@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cse',
         'USER': 'postgres',
-        'PASSWORD': 'Mubarak',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
     }
 }
@@ -128,8 +128,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST_USER="shaikmohammadimran123@gmail.com"
+EMAIL_HOST_USER="your mail"
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS= True
-EMAIL_HOST_PASSWORD="14jan2001"
+EMAIL_HOST_PASSWORD="you password"
