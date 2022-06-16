@@ -10,9 +10,10 @@
 		margin:0;
 	}
 		nav{
-			background: #99A799;
-			width: 100%;
-			margin-top: 0;
+			background: #DAD992;
+		width: 100%;
+		margin-top: 0;
+		height:8rem;
 
 		}
 		nav ul{
@@ -24,9 +25,13 @@
 		nav ul li{
 			display: inline-block;
 			line-height: 60px;
-			padding-left: 70px;
-
-							font-size:20px;
+			padding-left: 100px;
+             padding-top:2rem;
+							font-size:30px;
+		}
+		nav ul li a{
+			text-decoration: none;
+			 color:black;
 		}
 		nav input{
 			text-decoration: none;
@@ -40,6 +45,9 @@
 			color:black;
 			font-size:20px;
 		}
+		nav ul li a:hover{
+		color:peru;
+	}
 		nav input:hover{
 			background-color: #fff;
 			border: 2px solid #000000;
@@ -115,11 +123,12 @@
 	<nav>
 		<ul>
 			<li><a href="{% url 'projectdetails' %}">Project Details</a></li>
-			<li><a href="{% url 'reviewdates' %}">Review Dtes</a></li>
+			<li><a href="{% url 'reviewdates' %}">Review Dates</a></li>
 			<li><a href="{% url 'addmentors' %}">Add Mentor</a></li>
+			<li><a href="{% url 'mentorreport' %}">Mentor Report</a></li>
 		</ul>
 	</nav>
-	<form class="review" action="#" method="post" enctype="multipart/form-data">
+	<form class="review" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 	<div class='dates'style="background-color:white;height:480px;">
 		<h1 style='margin-left:35%; margin-bottom:6%'>Review Dates</h1>
@@ -129,14 +138,16 @@
 			<option value="3">Review 3</option>
 			</select>
 			<input class='date' type="date" name="dates">
-			<button style='background-color:#54E346; color:white;' type="submit">Save</button><br>
+			
 			<div class="label">
 
-			<label for="">Review 1:</label><input type="text" name="" value="{{ a }}" readonly> <br><br>
-			<label for="">Review 2:</label><input type="text" name="" value="{{ b }}" readonly> <br><br>
-			<label for="">Review 3:</label><input type="text" name="" value="{{ c }}" readonly> <br>
+			<label for="">Review 1:</label><input type="text" value="{{ a }}" readonly> <br><br>
+			<label for="">Review 2:</label><input type="text" value="{{ b }}" readonly> <br><br>
+			<label for="">Review 3:</label><input type="text" value="{{ c }}" readonly> <br>
 
 		</div>
+		
 	</div>
+	<button style='background-color:#54E346; color:white;' type="submit">Save</button><br>
 </form>
 </body>
